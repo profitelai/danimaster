@@ -1,20 +1,3 @@
-<?php
-// Set your IP address here
-$yourIPAddress = 'your.ip.address.here';
-
-// Function to set initial access state
-function initialAccessSetup($clientIP) {
-    // Check client IP and set cookie if not already present
-    if ($clientIP != $yourIPAddress && !isset($_COOKIE['verified'])) {
-        setcookie("verified", "no", 0, "/"); // Cookie expires at end of session
-    } else {
-        setcookie("verified", "yes", 0, "/"); // Cookie for your IP or already verified users
-    }
-}
-
-// Call the function with the current user's IP
-initialAccessSetup($_SERVER['REMOTE_ADDR']);
-?>
 
 <!DOCTYPE html>
 <html lang="en">
